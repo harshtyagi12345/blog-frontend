@@ -51,6 +51,7 @@ export const Navbar = () => {
                   <NavLink to="/logout" onClick={closeMenu}>Logout</NavLink>
                 </li>
                 
+                
               ) : (
                 <>
                   <li>
@@ -58,6 +59,9 @@ export const Navbar = () => {
                   </li>
                   <li>
                     <NavLink to="/login" onClick={closeMenu}>Login</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/admin" onClick={closeMenu}>Admin</NavLink>
                   </li>
                 </>
               )}
