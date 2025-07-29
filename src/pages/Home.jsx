@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Analytics } from '../components/Analytics';
 import '../index.css';
 
@@ -15,14 +16,14 @@ export const Home = () => {
                 Discover powerful stories, share your thoughts, and connect with readers worldwide.
                 Whether you're a passionate writer or a curious reader, our platform is made for you.
               </p>
-              <div className="btn btn-group">
-                <a href="/create">
-                  <button className="btn">Start Writing</button>
-                </a>
-                <a href="/blogs">
-                  <button className="btn secondary-btn">Read Blogs</button>
-                </a>
-              </div>
+             <div className="btn btn-group">
+  <Link to="/create">
+    <button className="btn">Start Writing</button>
+  </Link>
+  <Link to="/blogs">
+    <button className="btn secondary-btn">Read Blogs</button>
+  </Link>
+</div>
             </div>
 
             {/* Hero Image */}
@@ -60,14 +61,15 @@ export const Home = () => {
               Dive into our most loved and trending blogs written by creators from all walks of life.
               Get insights, learn something new, or simply enjoy a good read. Inspiration awaits.
             </p>
-            <div className="btn btn-group">
-              <a href="/blogs">
-                <button className="btn">Explore Blogs</button>
-              </a>
-              <a href="/create">
-                <button className="btn secondary-btn">Contribute Now</button>
-              </a>
-            </div>
+           <div className="btn btn-group">
+  <Link to="/blogs">
+    <button className="btn">Explore Blogs</button>
+  </Link>
+  <Link to="/create">
+    <button className="btn secondary-btn">Contribute Now</button>
+  </Link>
+</div>
+
           </div>
         </div>
       </section>
