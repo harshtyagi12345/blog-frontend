@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa"; // hamburger icons
 
 export const Navbar = () => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, user } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -40,18 +40,29 @@ export const Navbar = () => {
               <li>
                 <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
               </li>
-               <li>
-                 <NavLink to="/blogs"> Blogs </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/create">Create</NavLink>
-                </li>
+              <li>
+                <NavLink to="/blogs"> Blogs </NavLink>
+              </li>
+              <li>
+                <NavLink to="/create">Create</NavLink>
+              </li>
               {isLoggedIn ? (
-                <li>
-                  <NavLink to="/logout" onClick={closeMenu}>Logout</NavLink>
-                </li>
-                
-                
+                <>
+
+                  {user.isAdmin && (
+                    <>
+                      {console.log("Rendering Admin NavLink")}
+                      <li>
+                        <NavLink to="/admin" onClick={closeMenu}>Admin</NavLink>
+                      </li>
+                    </>
+                  )}
+
+                  <li>
+                    <NavLink to="/logout" onClick={closeMenu}>Logout</NavLink>
+                  </li>
+
+                </>
               ) : (
                 <>
                   <li>
@@ -59,9 +70,6 @@ export const Navbar = () => {
                   </li>
                   <li>
                     <NavLink to="/login" onClick={closeMenu}>Login</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/admin" onClick={closeMenu}>Admin</NavLink>
                   </li>
                 </>
               )}
